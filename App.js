@@ -1,18 +1,18 @@
-const parent = React.createElement("div",{
-id:"parent"
-},
-[ 
-    React.createElement("div",{
-    id:"child1"
-    },React.createElement("h1",{},"i am h1")),
-    React.createElement("div",{
-    id:"child2"
-            },
-           React.createElement("h2",{
-                }
-                ,"i am h2"))
-]
-    );
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const Title = () => <h1>This is title From Shorthand component</h1>
+const ReturnComponent = () => {
+    return <h1>Namaste I am from Return Component</h1>
+}
+const HeadingComponent = () => (
+    <div id="container">
+    <Title />
+<ReturnComponent />
+        <h1 className="heading">Namaste Functional Component </h1>
+    </div>
+);
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<HeadingComponent />);
